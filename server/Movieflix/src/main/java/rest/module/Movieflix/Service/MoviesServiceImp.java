@@ -24,16 +24,13 @@ public class MoviesServiceImp implements MoviesService{
 	}
 
 	@Override
+	@Transactional
 	public Movies findOne(String id) {
-		Movies existing = repository.findOne(id);
-		//if(existing == null) {
-			
-			//throw new NotFoundException("Movie with id: " + id + " not found");
-		//}
-		return existing;
+		return repository.findOne(id);
 	}
 	
 	@Override
+	@Transactional
 	public List<Movies> findByType(String type) {
 		List<Movies> existing = repository.findByType(type);
 		if(existing == null) {
@@ -44,6 +41,7 @@ public class MoviesServiceImp implements MoviesService{
 	}
 
 	@Override
+	@Transactional
 	public List<Movies> findByYear(String year) {
 		List<Movies> existing = repository.findByYear(year);
 		if(existing.isEmpty()) {
@@ -54,36 +52,43 @@ public class MoviesServiceImp implements MoviesService{
 	}
 		
 	@Override
+	@Transactional
 	public List<Movies> findByGenre(String genre) {
 		return repository.findByGenre(genre);
 	}
 	
 	@Override
+	@Transactional
 	public Movies findByTitle(String title) {
 		return repository.findByTitle(title);
 	}
 	
 	@Override
+	@Transactional
 	public List<Movies> sortByYear() {
 		return repository.sortByYear();
 	}
 	
 	@Override
+	@Transactional
 	public List<Movies> sortByimdbRatings() {
 		return repository.sortByimdbRatings();
 	}
 	
 	@Override
+	@Transactional
 	public List<Movies> sortByimdbVotes() {
 		return repository.sortByimdbVotes();
 	}
 	
 	@Override
+	@Transactional
 	public List<Movies> getTopRatedMovies() {
 		return repository.getTopRatedMovies();
 	}
 	
 	@Override
+	@Transactional
 	public List<Movies> getTopRatedSeries() {
 		return repository.getTopRatedSeries();
 	}

@@ -48,6 +48,9 @@ public class ReviewsServiceImp implements ReviewsService {
 			String movieId = review.getMovie().getId();
 			String userId = review.getUser().getId();
 			
+			System.out.println("Movie id: " +movieId);
+			System.out.println("User id: " +userId);
+			
 			Movies movie = mService.findOne(movieId);
 			review.setMovie(movie);
 			Users user = uService.findOne(userId);

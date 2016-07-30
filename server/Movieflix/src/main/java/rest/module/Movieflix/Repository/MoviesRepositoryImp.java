@@ -30,7 +30,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 	
 	@Override
-	@Transactional
 	public List<Movies> findByType(String type) {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.findByType", Movies.class);
 		query.setParameter("pType", type);
@@ -42,7 +41,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 	
 	@Override
-	@Transactional
 	public List<Movies> findByYear(String year) {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.findByYear", Movies.class);
 		query.setParameter("pYear", year);
@@ -53,7 +51,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 		return null;
 	}	
 	@Override
-	@Transactional
 	public List<Movies> findByGenre(String genre) {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.findByGenre", Movies.class);
 		query.setParameter("pGenre", genre);
@@ -65,7 +62,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 	
 	@Override
-	@Transactional
 	public Movies findByTitle(String title) {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.findByTitle", Movies.class);
 		query.setParameter("pTitle", title);
@@ -77,7 +73,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 	
 	@Override
-	@Transactional
 	public List<Movies> sortByYear() {
 		TypedQuery<Movies> query = em.createQuery("Movies.sortByYear", Movies.class);
 		List<Movies> movies = query.getResultList();
@@ -115,7 +110,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 	
 	@Override
-	@Transactional
 	public List<Movies> getTopRatedMovies() {
 		TypedQuery<Movies> query = em.createQuery("Select e from Movies e WHERE e.type = :pType AND e.imdbRatings > :pValue", Movies.class);
 		query.setParameter("pType", "movie");
@@ -124,7 +118,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 
 	@Override
-	@Transactional
 	public List<Movies> getTopRatedSeries() {
 		TypedQuery<Movies> query = em.createQuery("Select e from Movies e WHERE e.type = :pType AND e.imdbRatings > :pValue", Movies.class);
 		query.setParameter("pType", "series");
@@ -133,7 +126,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 
 	@Override
-	@Transactional
 	public Movies create(Movies movie) {
 		
 		em.persist(movie);
@@ -141,13 +133,11 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 
 	@Override
-	@Transactional
 	public Movies update(Movies movie) {
 		return em.merge(movie);
 	}
 
 	@Override
-	@Transactional
 	public void delete(Movies movie) {
 		em.remove(movie);
 	}

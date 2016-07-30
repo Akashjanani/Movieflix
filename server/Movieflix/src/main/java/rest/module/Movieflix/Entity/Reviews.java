@@ -24,7 +24,7 @@ public class Reviews {
 	
 	private String userComments;
 	
-	private String userRatings;
+	private int userRatings;
 	
 	@OneToOne
 	private Movies movie;
@@ -48,11 +48,11 @@ public class Reviews {
 		this.userComments = userComments;
 	}
 
-	public String getUserRatings() {
+	public int getUserRatings() {
 		return userRatings;
 	}
 
-	public void setUserRatings(String userRatings) {
+	public void setUserRatings(int userRatings) {
 		this.userRatings = userRatings;
 	}
 
