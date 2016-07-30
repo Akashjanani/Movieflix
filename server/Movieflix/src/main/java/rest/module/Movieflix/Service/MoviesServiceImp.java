@@ -26,17 +26,17 @@ public class MoviesServiceImp implements MoviesService{
 	@Override
 	public Movies findOne(String id) {
 		Movies existing = repository.findOne(id);
-		if(existing == null) {
+		//if(existing == null) {
 			
-			throw new NotFoundException("Movie with id: " + id + " not found");
-		}
+			//throw new NotFoundException("Movie with id: " + id + " not found");
+		//}
 		return existing;
 	}
 	
 	@Override
 	public List<Movies> findByType(String type) {
 		List<Movies> existing = repository.findByType(type);
-		if(existing.isEmpty()) {
+		if(existing == null) {
 			
 			throw new NotFoundException("Movie with type: " + type + " not found");
 		}
@@ -55,22 +55,12 @@ public class MoviesServiceImp implements MoviesService{
 		
 	@Override
 	public List<Movies> findByGenre(String genre) {
-		List<Movies> existing = repository.findByGenre(genre);
-		if(existing.isEmpty()) {
-			
-			throw new NotFoundException("Movie in the specified genre: " + genre + " not found");
-		}
-		return existing;
+		return repository.findByGenre(genre);
 	}
 	
 	@Override
 	public Movies findByTitle(String title) {
-		Movies existing = repository.findByTitle(title);
-		if(existing == null) {
-	
-			throw new NotFoundException("Movie title: " + title + " not found");
-		}
-		return existing;
+		return repository.findByTitle(title);
 	}
 	
 	@Override

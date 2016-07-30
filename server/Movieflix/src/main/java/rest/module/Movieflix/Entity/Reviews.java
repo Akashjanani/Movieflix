@@ -1,6 +1,5 @@
 package rest.module.Movieflix.Entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,10 +26,10 @@ public class Reviews {
 	
 	private String userRatings;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private Movies movie;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private Users user;
 
 	public String getId() {

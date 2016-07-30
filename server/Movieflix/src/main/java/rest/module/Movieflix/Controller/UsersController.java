@@ -30,6 +30,11 @@ public class UsersController {
 		return service.findOne(userid);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, path = "/email/{email}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public Users findByEmail(@PathVariable("email") String email) {
+		return service.findByEmail(email);
+	}
+	
 	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Users create(@RequestBody Users user) {
 		return service.create(user);

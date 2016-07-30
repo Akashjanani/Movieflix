@@ -13,6 +13,8 @@ public interface UsersService {
 	
 		public Users findOne(String id);
 	
+		public Users findByEmail(String email);
+		
 		public Users create(Users user);
 	
 		public Users update(String id, Users user);

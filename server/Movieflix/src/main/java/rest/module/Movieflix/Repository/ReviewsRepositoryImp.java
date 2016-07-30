@@ -8,9 +8,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import rest.module.Movieflix.Entity.Movies;
 import rest.module.Movieflix.Entity.Reviews;
-import rest.module.Movieflix.Entity.Users;
 
 @Repository
 public class ReviewsRepositoryImp implements ReviewsRepository{
@@ -23,7 +21,7 @@ public class ReviewsRepositoryImp implements ReviewsRepository{
 		TypedQuery<Reviews> query = em.createNamedQuery("Reviews.findReviewById", Reviews.class);
 		query.setParameter("Id", id);
 		List<Reviews> reviews = query.getResultList();
-		if(reviews!= null && reviews.size() >=1) {
+		if(reviews!= null) {
 			return reviews;
 		}
 		else {

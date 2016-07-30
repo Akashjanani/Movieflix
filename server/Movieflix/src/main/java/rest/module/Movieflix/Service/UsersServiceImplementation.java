@@ -35,6 +35,17 @@ public class UsersServiceImplementation implements UsersService{
 
 	@Override
 	@Transactional
+	public Users findByEmail(String email) {
+		Users existing = repository.findByEmail(email);
+		if(existing == null) {
+			
+			throw new NotFoundException("User with email: " + email + " not found");
+		}
+		return existing;
+	}
+	
+	@Override
+	@Transactional
 	public Users create(Users user) {
 		Users existing = repository.findByEmail(user.getEmail());
 		if(existing != null) {

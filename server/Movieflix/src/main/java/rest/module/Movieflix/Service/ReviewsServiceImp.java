@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import rest.module.Movieflix.Entity.Movies;
 import rest.module.Movieflix.Entity.Reviews;
+import rest.module.Movieflix.Entity.Users;
 import rest.module.Movieflix.Repository.ReviewsRepository;
 
 @Service
@@ -14,6 +16,8 @@ public class ReviewsServiceImp implements ReviewsService {
 
 	@Autowired
 	ReviewsRepository repository;
+	MoviesService mService;
+	UsersService uService;
 	
 	@Override
 	public List<Reviews> findReviewById(String id)  {
@@ -41,7 +45,13 @@ public class ReviewsServiceImp implements ReviewsService {
 	@Override
 	@Transactional
 	public Reviews create(Reviews review) {
-		
+			String movieId = review.getMovie().getId();
+			String userId = review.getUser().getId();
+			
+			Movies movie = mService.findOne(movieId);
+			review.setMovie(movie);
+			Users user = uService.findOne(userId);
+			review.setUser(user);
 			return repository.create(review);
 	}
 	
