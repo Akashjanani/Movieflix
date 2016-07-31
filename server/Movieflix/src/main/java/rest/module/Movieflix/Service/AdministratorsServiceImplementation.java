@@ -30,7 +30,9 @@ public class AdministratorsServiceImplementation implements AdministratorsServic
 			
 			throw new NotFoundException("Administrator with id:" + id + "not found");
 		}
+		else {
 		return existing;
+		}
 	}
 
 	@Override
@@ -40,7 +42,9 @@ public class AdministratorsServiceImplementation implements AdministratorsServic
 		if(existing != null) {
 			throw new AlreadyExistsException("Admin email already in use:" + admin.getEmail());
 		}
+		else {
 		return repository.create(admin);
+		}
 	}
 
 	@Override
@@ -51,7 +55,9 @@ public class AdministratorsServiceImplementation implements AdministratorsServic
 			
 			throw new NotFoundException("User with id:" + id + "not found");
 		}
+		else {
 		return repository.update(admin);
+		}
 	}
 
 	@Override
@@ -61,7 +67,9 @@ public class AdministratorsServiceImplementation implements AdministratorsServic
 		if(existing == null) {
 			throw new NotFoundException("User with id:" + id + "not found");
 		}
+		else {
 		repository.delete(existing);
+		}
 	}
  }
 

@@ -18,6 +18,7 @@ public class MoviesServiceImp implements MoviesService{
 	MoviesRepository repository;
 	
 	@Override
+	@Transactional
 	public List<Movies> findAll() {
 		
 		return repository.findAll();
@@ -26,7 +27,13 @@ public class MoviesServiceImp implements MoviesService{
 	@Override
 	@Transactional
 	public Movies findOne(String id) {
-		return repository.findOne(id);
+		Movies existing = repository.findOne(id);
+		if(existing == null) {
+			throw new NotFoundException("Movie with id: " + id + " not found");
+		}
+		else {
+		return existing;
+		}
 	}
 	
 	@Override
@@ -34,33 +41,47 @@ public class MoviesServiceImp implements MoviesService{
 	public List<Movies> findByType(String type) {
 		List<Movies> existing = repository.findByType(type);
 		if(existing == null) {
-			
 			throw new NotFoundException("Movie with type: " + type + " not found");
 		}
+		else {
 		return existing;
+		}
 	}
 
 	@Override
 	@Transactional
 	public List<Movies> findByYear(String year) {
 		List<Movies> existing = repository.findByYear(year);
-		if(existing.isEmpty()) {
-			
+		if(existing == null) {
 			throw new NotFoundException("Movie in the year: " + year + " does not exist");
 		}
+		else {
 		return existing;
+		}
 	}
 		
 	@Override
 	@Transactional
 	public List<Movies> findByGenre(String genre) {
-		return repository.findByGenre(genre);
+		List<Movies> existing = repository.findByGenre(genre);
+		if(existing == null) {
+			throw new NotFoundException("Movie in the specified genre: " + genre + " does not exist");
+		}
+		else {
+		return existing;
+		}
 	}
 	
 	@Override
 	@Transactional
 	public Movies findByTitle(String title) {
-		return repository.findByTitle(title);
+		Movies existing = repository.findByTitle(title);
+		if(existing == null) {
+			throw new NotFoundException("Movie title: " + title + " does not exist");
+		}
+		else {
+		return existing;
+		}
 	}
 	
 	@Override
@@ -100,7 +121,9 @@ public class MoviesServiceImp implements MoviesService{
 		if(existing != null) {
 			throw new AlreadyExistsException("Title name already in use: " + movie.getTitle());
 		}
+		else {
 		return repository.create(movie);
+		}
 	}
 
 	@Override
@@ -108,7 +131,6 @@ public class MoviesServiceImp implements MoviesService{
 	public Movies update(String id, Movies movie) {
 		Movies existing = repository.findOne(id);
 		if(existing == null) {
-			
 			throw new NotFoundException("Movie with id: " + id + " not found");
 		}
 		return repository.update(movie);

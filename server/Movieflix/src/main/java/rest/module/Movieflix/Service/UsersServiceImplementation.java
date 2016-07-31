@@ -30,7 +30,9 @@ public class UsersServiceImplementation implements UsersService{
 			
 			throw new NotFoundException("User with id:" + id + "not found");
 		}
+		else {
 		return existing;
+		}
 	}
 
 	@Override
@@ -41,7 +43,9 @@ public class UsersServiceImplementation implements UsersService{
 			
 			throw new NotFoundException("User with email: " + email + " not found");
 		}
+		else {
 		return existing;
+		}
 	}
 	
 	@Override
@@ -51,7 +55,9 @@ public class UsersServiceImplementation implements UsersService{
 		if(existing != null) {
 			throw new AlreadyExistsException("User email already in use:" + user.getEmail());
 		}
+		else {
 		return repository.create(user);
+		}
 	}
 
 	@Override
@@ -62,7 +68,9 @@ public class UsersServiceImplementation implements UsersService{
 			
 			throw new NotFoundException("User with id:" + id + "not found");
 		}
+		else {
 		return repository.update(user);
+		}
 	}
 
 	@Override
@@ -72,6 +80,8 @@ public class UsersServiceImplementation implements UsersService{
 		if(existing == null) {
 			throw new NotFoundException("User with id:" + id + "not found");
 		}
+		else {
 		repository.delete(existing);
+		}
 	}
  }

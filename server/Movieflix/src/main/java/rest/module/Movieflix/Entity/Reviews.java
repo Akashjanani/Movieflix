@@ -1,11 +1,12 @@
 package rest.module.Movieflix.Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -13,7 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table
 @NamedQueries({ 
-	@NamedQuery(name= "Reviews.findReviewById", query= "SELECT e FROM Reviews e WHERE e.movie.id=:Id"),
+	@NamedQuery(name= "Reviews.findReviewByMovieId", query= "SELECT e FROM Reviews e WHERE e.movie.id=:Id"),
 })
 public class Reviews {
 
@@ -26,10 +27,10 @@ public class Reviews {
 	
 	private int userRatings;
 	
-	@OneToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Movies movie;
 	
-	@OneToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Users user;
 
 	public String getId() {

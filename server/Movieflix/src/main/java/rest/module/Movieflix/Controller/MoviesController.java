@@ -51,7 +51,7 @@ public class MoviesController {
 			return service.findByTitle(movietitle);
 		}
 		
-		@RequestMapping(method = RequestMethod.GET, value= "/sortyear", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+		@RequestMapping(method = RequestMethod.GET, value= "/sortYear", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 		public List<Movies> sortByYear() {
 			return service.sortByYear();
 		}

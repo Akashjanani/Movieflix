@@ -20,9 +20,9 @@ public class ReviewsController {
 	@Autowired
 	ReviewsService service;
 	
-	@RequestMapping(method=RequestMethod.GET, value="/findById/{id}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public List<Reviews> findReviewById(@PathVariable("id") String id) {
-		return service.findReviewById(id);
+	@RequestMapping(method=RequestMethod.GET, value="/findByMovieId/{movieid}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Reviews> findReviewByMovieId(@PathVariable("movieid") String movieid) {
+		return service.findReviewByMovieId(movieid);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="{id}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)

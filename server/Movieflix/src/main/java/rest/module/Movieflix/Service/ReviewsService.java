@@ -9,7 +9,7 @@ import rest.module.Movieflix.Entity.Reviews;
 @Component
 public interface ReviewsService {
 
-	public List<Reviews> findReviewById(String id);
+	public List<Reviews> findReviewByMovieId(String movieid);
 	public Reviews findOne(String id);
 	public Reviews create(Reviews review);
 	public Reviews update(String id, Reviews review);

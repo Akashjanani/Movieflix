@@ -17,9 +17,9 @@ public class ReviewsRepositoryImp implements ReviewsRepository{
 	private EntityManager em;
 	
 	@Override
-	public List<Reviews> findReviewById(String id) {
-		TypedQuery<Reviews> query = em.createNamedQuery("Reviews.findReviewById", Reviews.class);
-		query.setParameter("Id", id);
+	public List<Reviews> findReviewByMovieId(String movieid) {
+		TypedQuery<Reviews> query = em.createNamedQuery("Reviews.findReviewByMovieId", Reviews.class);
+		query.setParameter("Id", movieid);
 		List<Reviews> reviews = query.getResultList();
 		if(reviews!= null) {
 			return reviews;
@@ -46,6 +46,7 @@ public class ReviewsRepositoryImp implements ReviewsRepository{
 		return review;
 	}
 
+	@Override
 	public void delete(Reviews review) {
 		em.remove(review);
 	}

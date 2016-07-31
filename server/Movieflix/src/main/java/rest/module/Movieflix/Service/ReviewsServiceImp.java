@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import rest.module.Movieflix.Entity.Movies;
 import rest.module.Movieflix.Entity.Reviews;
 import rest.module.Movieflix.Entity.Users;
+import rest.module.Movieflix.Exception.NotFoundException;
 import rest.module.Movieflix.Repository.ReviewsRepository;
 
 @Service
@@ -16,18 +17,20 @@ public class ReviewsServiceImp implements ReviewsService {
 
 	@Autowired
 	ReviewsRepository repository;
+	@Autowired
 	MoviesService mService;
+	@Autowired
 	UsersService uService;
 	
 	@Override
-	public List<Reviews> findReviewById(String id)  {
+	public List<Reviews> findReviewByMovieId(String movieid)  {
 		
-		List<Reviews> reviews = repository.findReviewById(id);
-		if(reviews !=null) {
-			return reviews;
+		List<Reviews> review = repository.findReviewByMovieId(movieid);
+		if(review ==null) {
+			throw new NotFoundException("Review with movie id: " + movieid +" not found");
 		}
 		else {
-			return null;		
+			return review;		
 		}
 	}
 	
@@ -35,7 +38,7 @@ public class ReviewsServiceImp implements ReviewsService {
 	public Reviews findOne(String id) {
 		Reviews review = repository.findOne(id);
 		if(review == null) {
-			return null;
+			throw new NotFoundException("Review with id: " + id +" not found");
 		}
 		else  {
 			return review;
@@ -48,22 +51,24 @@ public class ReviewsServiceImp implements ReviewsService {
 			String movieId = review.getMovie().getId();
 			String userId = review.getUser().getId();
 			
-			System.out.println("Movie id: " +movieId);
-			System.out.println("User id: " +userId);
-			
+			if(movieId == null && userId == null) {
+				return null;
+			}
+			else {
 			Movies movie = mService.findOne(movieId);
 			review.setMovie(movie);
 			Users user = uService.findOne(userId);
 			review.setUser(user);
 			return repository.create(review);
+		}
 	}
 	
-	@Override
+	@Override	
 	@Transactional
 	public Reviews update(String id, Reviews review) {
 		Reviews existing = repository.findOne(id);
 		if(existing == null) {
-			return null;
+			throw new NotFoundException("Review with id: " + id +" not found");
 		}
 		else {
 			return repository.update(id, review);
@@ -74,7 +79,12 @@ public class ReviewsServiceImp implements ReviewsService {
 	@Transactional
 	public void delete(String id) {
 		Reviews existing = repository.findOne(id);
+		if(existing == null) {
+			throw new NotFoundException("Review with id: " + id +" not found");
+		}
+		else {
 		repository.delete(existing);
+		}
 	}
 }
 

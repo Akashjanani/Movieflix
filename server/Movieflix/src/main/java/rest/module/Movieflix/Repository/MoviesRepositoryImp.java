@@ -7,8 +7,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import rest.module.Movieflix.Entity.Movies;
 
 @Repository
@@ -74,19 +72,16 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	
 	@Override
 	public List<Movies> sortByYear() {
-		TypedQuery<Movies> query = em.createQuery("Movies.sortByYear", Movies.class);
+		TypedQuery<Movies> query = em.createNamedQuery("Movies.sortByYear", Movies.class);
 		List<Movies> movies = query.getResultList();
 		if(movies.isEmpty()) {
 			System.out.println("List not available");
 			return null;
 		}
-		else {
 			return movies;
-		}
 	}
 	
 	@Override
-	@Transactional
 	public List<Movies> sortByimdbRatings() {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.sortByimdbRatings", Movies.class);
 		List<Movies> movies = query.getResultList();
@@ -98,7 +93,6 @@ public class MoviesRepositoryImp implements MoviesRepository {
 	}
 	
 	@Override
-	@Transactional
 	public List<Movies> sortByimdbVotes() {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.sortByimdbVotes", Movies.class);
 		List<Movies> movies = query.getResultList();

@@ -6,7 +6,7 @@ import rest.module.Movieflix.Entity.Reviews;
 
 public interface ReviewsRepository {
 
-		public List<Reviews> findReviewById(String id);
+		public List<Reviews> findReviewByMovieId(String movieid);
 		public Reviews create(Reviews review);
 		public Reviews findOne(String id);
 		public Reviews update(String id, Reviews review);
