@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movieflix-Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+                        <link rel="stylesheet" href="css/Admin.css">
+
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                        </head>
+                        <body>
+                        <div class="navbar navbar-inverse navbar-fixed-left">
+                            <a href="#home" role="tab" data-toggle="tab">
+                                <img src="images/Logo.png"></a>
+                            </a>
+                            <ul class="nav nav-pills nav-stacked" role="tablist">
+                                <li role="presentation"><a href="#updateMovie" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Update Movie </a></li>
+                                <li role="presentation"><a href="#updateSeries" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Update TV Series </a></li>
+                                <li role="presentation"><a href="#addMovie" role="tab" data-toggle="tab" class="active2"><span class="glyphicon glyphicon-chevron-right"></span>Add Movie </a></li>
+                                <li role="presentation"><a href="#userList" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span> User List</a></li>
+                                <li role="presentation"><a href="Homepage.html"><span class="glyphicon glyphicon-chevron-right"></span> Sign out</a></li>
+                            </ul>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><span class="glyphicon glyphicon-user"></span>  Akash</li>
+                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade" id="updateMovie">
+                                        <div class="container">
+                                            <h2>Movies List</h2>
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>Poster</th>
+                                                    <th>Title</th>
+                                                    <th>Year</th>
+                                                    <th>Type</th>
+                                                    <th>Update</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><img class="poster" src="images/Thumbnails/avengers-age-of-ultron.jpg"></td>
+                            <td>Avengers: Age of Ultron</td>
+                            <td>2015</td>
+                            <td>Movie</td>
+                            <td><a href="UpdateMovies.html" class="glyphicon glyphicon-edit buttons"> Edit</a></td>
+                            <td><a class="glyphicon glyphicon-remove buttons"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img class="poster" src="images/Thumbnails/the-dark-knight-rises.jpg"></td>
+                            <td>The Dark Knight Rises</td>
+                            <td>2012</td>
+                            <td>Movie</td>
+                            <td><a href="UpdateMovies.html" class="glyphicon glyphicon-edit buttons"> Edit</a></td>
+                            <td><a class="glyphicon glyphicon-remove buttons"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img class="poster" src="images/Thumbnails/The-Martian-poster.jpg"></td>
+                            <td>The Martian</td>
+                            <td>2015</td>
+                            <td>Movie</td>
+                            <td><a href="UpdateMovies.html" class="glyphicon glyphicon-edit buttons"> Edit</a></td>
+                            <td><a class="glyphicon glyphicon-remove buttons"></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="updateSeries">...</div>
+            <div role="tabpanel" class="tab-pane fade" id="addMovie">...</div>
+            <div role="tabpanel" class="tab-pane fade" id="userList">...</div>
+            </div>
+    </div>
+</div>
+</nav>
+</body>
+</html>
