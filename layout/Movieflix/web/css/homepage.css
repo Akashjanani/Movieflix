@@ -1,0 +1,112 @@
+.container-fluid{
+    min-height: 70px;
+}
+.navbar-nav>li{
+    margin-top: 12px;
+}
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.body {
+    background-color: black;
+    font: 14px/20px Helvetica, San-Serif;
+    color: white;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 180%;
+    line-height: 120%;
+    padding: 5% 0;
+}
+h4{
+    line-height: 110px;
+    padding: 5% 0;
+}
+p{
+    padding: 1%;
+}
+img{
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+#menu-icon{
+    //display: hidden;
+    width: 40px;
+    height: 20px;
+    background: black;
+}
+a:hover#menu-icon {
+    border-radius:4px 4px 0 0;
+}
+ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    margin-top:-11px;
+    margin-left: 90px;
+    font-size: 16px;
+}
+.current{
+    color: #FFF;
+    text-decoration: underline;
+}
+#slider{
+    margin: 50px 0;
+}
+#content{
+    margin:0 auto;
+    max-width: 2000px;
+    margin-top: -50px;
+}
+.blueberry{
+    max-width: 70%;
+    margin-top: -50px;
+}
+section{
+    width: 29%;
+    float: left;
+    margin:2% 2%;
+    text-align: center;
+}
+.clear{
+    clear: both;
+}
+footer{
+    background: black;
+    width: 100%;
+    overflow: hidden;
+    border-top: white 1px solid;
+}
+footer p, footer h4{
+    color: white;
+}
+footer p a {
+    color: white;
+    text-decoration: none;
+}
+ul.social li{
+    display: inline;
+}
+.blueberry .pager {
+    height: 10px;
+    text-align: center;
+}

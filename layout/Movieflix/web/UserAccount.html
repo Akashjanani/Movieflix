@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movieflix-My Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/UserAccount.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="UserHome.html">
+                <img src="images/Logo.png">
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="TopRatedMovies.html">Top Rated Movies</a></li>
+            <li><a href="TopRatedSeries.html">Top Rated TV Series</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Categories
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Drama</a></li>
+                    <li><a href="#">Comedy</a></li>
+                    <li><a href="#">Thriller</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <div class="form-group has-feedback">
+                    <form class="form-inline pull-xs-right">
+                        <input class="form-control" type="text" placeholder="Titles, genres" />
+                        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                    </form>
+                </div>
+            </li>
+            <li><a href="UserAccount.html"><span class="glyphicon glyphicon-wrench"></span> My Account</a></li>
+            <li><a href="Homepage.html"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container">
+    <h1>My Account</h1>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Upload a picture</h6>
+
+                <input type="file" class="form-control">
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <h3>Personal info</h3>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">First name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="Akash">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Last name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="Janani">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Payment Details:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="****-****-****-1234">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="akash.janani@outlook.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Time Zone:</label>
+                    <div class="col-lg-8">
+                        <div class="ui-select">
+                            <select id="user_time_zone" class="form-control">
+                                <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                <option value="Alaska">(GMT-09:00) Alaska</option>
+                                <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                <option value="Arizona">(GMT-07:00) Arizona</option>
+                                <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Username:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="akashjanani">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" value="11111122333">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" value="11111122333">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="button" class="btn btn-primary" value="Save Changes">
+                        <span></span>
+                        <input type="reset" class="btn btn-default" value="Cancel">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+</body>
+</html>

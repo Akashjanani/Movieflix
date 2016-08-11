@@ -1,0 +1,149 @@
+#bootstrap-overrides {
+    background-image:url("../images/691276.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font: 14px/20px Helvetica, San-Serif;
+    color: white;
+    margin-top: 140px;
+}
+#logo_login{
+    margin: 20px;
+    float: left;
+    width: 400px;
+    height:170px;
+    margin-top: -130px;
+    background-image: url(../images/Logo.png);
+    background-repeat:no-repeat;
+}
+#h1 {
+    margin-bottom: 20px;
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    color: #23527c;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 80px;
+    margin-bottom: 150px;
+    margin-right: 70px;
+    margin-left: -70px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.sign-in
+{
+    display: block;
+    margin-top: 10px;
+}
+#footer_signup{
+    background: black;
+    width: 100%;
+    overflow: hidden;
+    border-top: black;
+}
+#footer_signup p, #footer_signup h4{
+    color: white;
+}
+#footer_signup p a {
+    color: white;
+    text-decoration: none;
+}
+ul.social li{
+    display: inline;
+}
+meter {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin: 0 auto 1em;
+    width: 100%;
+    height: 0.5em;
+
+    /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: orange; }
+meter[value="4"]::-moz-meter-bar { background: green; }
