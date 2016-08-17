@@ -1,0 +1,30 @@
+<div class="form-group has-feedback">
+    <form class="form-inline pull-xs-right">
+        <input class="form-control" type="text" placeholder="Search"  ng-model="userListVm.searchText"/>
+    </form>
+</div>
+<div class="account-wall">
+    <h1>Movie List</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Poster</th>
+        <th ng-click="movieListVm.sorter.sortBy='title'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Title</th>
+        <th ng-click="movieListVm.sorter.sortBy='year'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Year</th>
+        <th ng-click="movieListVm.sorter.sortBy='genre'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Genre</th>
+        <th ng-click="movieListVm.sorter.sortBy='director'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Director</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="movies in movieListVm.movies">
+        <td>
+            <a ng-href="#/movie-detail/{{movies.id}}"><img class= "poster" ng-src="{{movies.poster}}"/></a>
+        </td>
+    <td>{{movies.title}}</td>
+    <td>{{movies.year}}</td>
+    <td>{{movies.genre}}</td>
+    <td>{{movies.director}}</td>
+    </tr>
+    </tbody>
+</table>
+    </div>

@@ -1,0 +1,26 @@
+<div class="form-group has-feedback">
+    <form class="form-inline pull-xs-right">
+        <input class="form-control" type="text" placeholder="Search"  ng-model="userListVm.searchText"/>
+    </form>
+</div>
+<div class="account-wall">
+    <h1>User List</h1>
+<table id="table-striped" class="table table-striped">
+    <thead>
+    <tr>
+        <th ng-click="userListVm.sorter.sortBy='firstName'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">Name</th>
+        <th ng-click="userListVm.sorter.sortBy='email'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">Email</th>
+        <th ng-click="userListVm.sorter.sortBy='city'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">City</th>
+        <th ng-click="userListVm.sorter.sortBy='state'; userListVm.sorter.sortOrder = !userListVm.sorter.sortOrder;">State</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in userListVm.users | orderBy:userListVm.sorter.sortBy: userListVm.sorter.sortOrder">
+    <td>{{user.firstName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.city}}</td>
+    <td>{{user.state}}</td>
+    </tr>
+    </tbody>
+</table>
+    </div>

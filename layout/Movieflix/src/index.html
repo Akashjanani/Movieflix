@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="user">
+<head>
+    <meta charset="UTF-8" >
+    <title>Movieflix- Movies & TV Shows</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bower:css -->
+    <!-- endinject -->
+
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <!-- app:css -->
+    <!-- endinject -->
+</head>
+<body id="body">
+<div id="wrapper">
+<div id="header">
+<div ng-controller="HeaderCtrl">
+    <div ng-include="templateUrl"></div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container" ng-view></div>
+</div>
+
+<div id="footer">
+    <footer class="container">
+        <section>
+            <h4>Question? Call ##########</h4>
+            <ul class="footer">
+                <li>Help Center</li>
+                <li>Account</li>
+                <li>Terms Of Use</li>
+            </ul>
+        </section>
+        <section>
+            <h4>Connect With Us!</h4>
+            <ul class="social">
+                <li><i class="fa fa-facebook"></i>    <i class="fa fa-twitter"></i>    <i class="fa fa-instagram"></i></li>
+            </ul>
+        </section>
+    </footer>
+</div>
+</div>
+
+<!-- bower:js -->
+<!-- endinject -->
+
+<!-- vendor:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- endinject -->
+
+<!-- app:js -->
+<!-- endinject -->
+</body>
+</html>

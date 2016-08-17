@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="user-home.tmpl.html">
+                <img src="../../images/Logo.png"></a>
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#/user-home">Home</a></li>
+            <li><a href="#/top-movies">Top Rated Movies</a></li>
+            <li><a href="#/top-series">Top Rated TV Series</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" id="nav" data-toggle="dropdown" >Categories
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu" ng-model="select" ng-change="showSelectValue(select)" >
+                    <li><a href="#/genre">Action</a></li>
+                    <li><a href="#/genre">Adventure</a></li>
+                    <li><a href="#/genre">Drama</a></li>
+                    <li><a href="#/genre">Comedy</a></li>
+                    <li><a href="#/genre">Thriller</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <div class="form-group has-feedback">
+                    <form class="form-inline pull-xs-right">
+                        <input class="form-control" type="text" placeholder="Titles, genres" />
+                        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                    </form>
+                </div>
+            </li>
+            <li><a href="#/edituser"><span class="glyphicon glyphicon-wrench"></span> My Account</a></li>
+            <li><a href="../../../build/index.html"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>

@@ -1,0 +1,45 @@
+<div class="row">
+    <header>
+        <h1>Movie Details</h1><br><br>
+    </header>
+    <div class="col-sm-6">
+        <img class="img-responsive" ng-src="{{userMovieVm.movie.poster}}">
+    </div>
+    <div class="col-sm-6">
+    <p class="movie_option"><strong>Title: </strong>{{userMovieVm.movie.title}}</p>
+    <p class="movie_option"><strong>Year: </strong>{{userMovieVm.movie.year}}</p>
+    <p class="movie_option"><strong>Director: </strong>{{userMovieVm.movie.director}}</p>
+    <p class="movie_option"><strong>Cast: </strong>{{userMovieVm.movie.actors}}</p>
+    <p class="movie_option"><strong>Writer: </strong>{{userMovieVm.movie.writer}}</p>
+    <p class="movie_option"><strong>Awards: </strong>{{userMovieVm.movie.awards}}</p>
+    <p class="movie_option"><strong>imdb Ratings: </strong>{{userMovieVm.movie.imdbRatings}}</p>
+    <p class="movie_option"><strong>imdb Votes: </strong>{{userMovieVm.movie.imdbVotes}}</p>
+<p class="m_4"><strong>Plot: </strong>{{userMovieVm.movie.plot}}</p>
+    </div>
+    </div>
+<div class="detailBox" >
+    <div class="titleBox">
+        <label>User Reviews</label>
+    </div>
+    <div class="commentBox">
+
+        <p class="taskDescription">Please review the movie .</p>
+    </div>
+    <div class="actionBox" >
+        <ul class="commentList" ng-repeat="reviews in userMovieVm.review">
+            <li>
+                <div class="commentText">
+                    <p class="">{{reviews.user.firstName}} {{reviews.user.lastName}} - {{reviews.userComments}}</p><span class="date sub-text"></span>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline" role="form" ng-submit="userMovieVm.userComment()">
+            <div class="form-group">
+                <textarea class="form-control" ng-model="userMovieVm.newReview.userComments" placeholder="Your review" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
