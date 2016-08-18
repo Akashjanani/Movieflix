@@ -1,0 +1,16 @@
+#h1 {
+    margin-bottom: 20px;
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.sign-in
+{
+    display: block;
+    margin-top: 10px;
+}
