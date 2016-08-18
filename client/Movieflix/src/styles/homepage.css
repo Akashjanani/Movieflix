@@ -1,0 +1,224 @@
+#body {
+    margin:0;
+    padding:0;
+    height:100%;
+    background: beige;
+}
+#wrapper {
+    min-height:100%;
+    position:relative;
+}
+#content {
+    padding-bottom:100px; /* Height of the footer element */
+}
+.navbar-inverse{
+    background-color: #292c2f;
+}
+.navbar-nav > li > a{
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-right: 12px;
+}
+.container{
+    width: 1726px;
+    padding-right:0;
+    padding-left: 0;
+}
+.container-fluid{
+    min-height: 70px;
+    margin-right: 8px;
+}
+.navbar-nav>li{
+    margin-top: 12px;
+}
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 180%;
+    line-height: 120%;
+    padding: 5% 0;
+}
+h4{
+    line-height: 110px;
+    padding: 5% 0;
+}
+p{
+    padding: 1%;
+}
+img{
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+a{
+    color: #337ab7;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    margin-top:-11px;
+    margin-left: 90px;
+    font-size: 16px;
+}
+.current{
+    color: #FFF;
+    text-decoration: underline;
+}
+section{
+    width: 29%;
+    float: left;
+    margin:2% 2%;
+    text-align: center;
+}
+.clear{
+    clear: both;
+}
+/*<----------------------Footer--------------------------->*/
+.footer-distributed{
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+
+    padding: 20px 30px;
+    margin-top: 80px;
+}
+
+.footer-distributed .footer-left p{
+    color:  #8f9296;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+    font-size:18px;
+    font-weight: bold;
+    color:  #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+}
+
+.footer-distributed .footer-right{
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color:  #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right{
+        text-align: center;
+    }
+
+    .footer-distributed .footer-right{
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links{
+        line-height: 1.8;
+    }
+}
+
+#rowm{
+    margin-left:auto;
+    margin-right: auto;
+}
+
+/*<------------------------------------------ADMIN CSS --------------------------------------->*/
+/*.form-control{
+    margin-top: 7px;
+}*/
+/*.form-group{
+    width:40%;
+}*/
+.btn{
+    margin-top: 7px;
+}
+.glyphicon-search{
+    color:black;
+    padding-top: 7px;
+}
+.navbar-fixed-left {
+    width: 370px;
+    position: fixed;
+    border-radius: 0;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+    float: none;  /* Cancel default li float: left */
+    width: 139px;
+}
+
+.navbar-fixed-left + .container {
+    padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+    margin-top: -50px;
+    margin-left: 140px;
+}
+.buttons{
+    color: black;
+}
+.nav-pills>li.active>a{
+    background-color: #222222;
+}
+.poster{
+    width: 60px;
+    height: 60px;
+}
+#table-striped{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

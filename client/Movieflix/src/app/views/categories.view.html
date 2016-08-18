@@ -1,0 +1,20 @@
+<div class="row">
+    <h2 class="rowHeader">Popular now</h2>
+    <div ng-repeat="movies in selectVm.movies">
+        <div class="col-xs-6 col-md-3">
+            <div class="grow">
+                <div class="hovereffect">
+                    <div class="thumbnail">
+                        <a><img class= "" ng-src="{{movies.poster}}"/></a>
+                        <div class="overlay">
+                            <h2>{{movies.title}}</h2>
+                            <p>{{movies.year}}  <span class="glyphicons glyphicons-us-rat-pg-13" id="glyph"></span>{{movies.runtime}}
+                                <a class="glyphicon glyphicon-play" ng-href="#/user-movie-detail/{{movies.id}}" id="play">Play</a></p>
+                            <p>{{movies.plot}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

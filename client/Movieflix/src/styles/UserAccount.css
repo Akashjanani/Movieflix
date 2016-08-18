@@ -1,0 +1,25 @@
+.btn{
+    margin-top: 7px;
+}
+.navbar-nav>li{
+    margin-top: 12px;
+    font-size: 15px;
+}
+ul.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    white-space: nowrap;
+    font-size: 15px;
+    width: 20px;
+    color: #333;
+}
+.navbar{
+    min-height: 70px;
+}
+body {
+    background: lightgrey;
+}
+.glyphicon-search{
+    color:black;
+    padding-top: 7px;
+}
