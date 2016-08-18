@@ -1,0 +1,94 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/user-home">
+                <img src="images/Logo.png"></a>
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#/top-movies">Top Rated Movies</a></li>
+            <li><a href="#/top-series">Top Rated TV Series</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" id="nav" data-toggle="dropdown" >Categories
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu" ng-model="select" ng-change="showSelectValue(select)" >
+                    <li><a href="#/genre">Action</a></li>
+                    <li><a href="#/genre">Adventure</a></li>
+                    <li><a href="#/genre">Drama</a></li>
+                    <li><a href="#/genre">Comedy</a></li>
+                    <li><a href="#/genre">Thriller</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="form-group has-feedback">
+                    <form class="form-inline pull-xs-right">
+                        <input class="form-control" type="text" placeholder="Titles, genres" />
+                        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                    </form>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" >User
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu" ng-model="select" ng-change="showSelectValue(select)" >
+                    <li><a href="#/userAccount"><span class="glyphicon glyphicon-wrench"></span>My Account</a></li>
+                    <li><a href="#/login"><span class="glyphicon glyphicon-log-out"></span> Sign out of Netflix</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="row">
+    <header>
+        <h1>Movie Details</h1><br><br>
+    </header>
+    <div class="col-sm-6">
+        <img class="img-responsive" ng-src="{{userMovieVm.movie.poster}}">
+    </div>
+    <div class="col-sm-6">
+    <p class="movie_option"><strong>Title: </strong>{{userMovieVm.movie.title}}</p>
+    <p class="movie_option"><strong>Year: </strong>{{userMovieVm.movie.year}}</p>
+    <p class="movie_option"><strong>Director: </strong>{{userMovieVm.movie.director}}</p>
+    <p class="movie_option"><strong>Cast: </strong>{{userMovieVm.movie.actors}}</p>
+    <p class="movie_option"><strong>Writer: </strong>{{userMovieVm.movie.writer}}</p>
+    <p class="movie_option"><strong>Awards: </strong>{{userMovieVm.movie.awards}}</p>
+    <p class="movie_option"><strong>imdb Ratings: </strong>{{userMovieVm.movie.imdbRatings}}</p>
+    <p class="movie_option"><strong>imdb Votes: </strong>{{userMovieVm.movie.imdbVotes}}</p>
+    <p class="m_4"><strong>Plot: </strong>{{userMovieVm.movie.plot}}</p>
+    <p class="movie_option"><a href="http://www.imdb.com/title/{{userMovieVm.movie.imdbID}}"><strong>Lookup on imdb</strong></a></p>
+    </div>
+    </div>
+<div class="detailBox" >
+    <div class="titleBox">
+        <label>User Reviews</label>
+    </div>
+    <div class="commentBox">
+
+        <p class="taskDescription">Please review the movie .</p>
+    </div>
+    <div class="actionBox" >
+        <ul class="commentList" ng-repeat="reviews in userMovieVm.review">
+            <li>
+                <div class="commentText">
+                    <p class="">{{reviews.user.firstName}} {{reviews.user.lastName}} - {{reviews.userComments}}</p><span class="date sub-text"></span>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline" role="form" ng-submit="userMovieVm.userComment()">
+            <div class="form-group">
+                <textarea class="form-control" ng-model="userMovieVm.newReview.userComments" placeholder="Your review" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

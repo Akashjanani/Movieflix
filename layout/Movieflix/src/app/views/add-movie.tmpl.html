@@ -1,0 +1,163 @@
+<div class="navbar navbar-inverse navbar-fixed-left">
+    <a href="#user-list" role="tab" data-toggle="tab">
+        <img src="images/Logo.png"></a>
+    </a>
+    <div class="form-group has-feedback">
+        <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search"  ng-model="userListVm.searchText"/>
+        </form>
+    </div>
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li role="presentation"><a href="#/user-list" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>User List </a></li>
+        <li role="presentation"><a href="#/movie-list" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Movie/TV Series List </a></li>
+        <li role="presentation"><a href="#add-movie" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Add Movie </a></li>
+        <li role="presentation"><a href="#account" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>My Account</a></li>
+        <li role="presentation"><a href="#login" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Sign out</a></li>
+    </ul>
+
+</div>
+<div class="account-wall">
+<table id="table-striped" class="table table-striped">
+<thead>
+    <h1>Add a new title</h1>
+</thead>
+    <tbody>
+
+<form class="form-horizontal" role="form" name="movieForm" ng-submit="movieForm.$setPristine(); addMovieVm.addMovie()" novalidate>
+    <tr>
+    <td>  <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Title" ng-model="addMovieVm.newMovie.title" required minlength="4">
+        <div ng-messages="movieForm.title.$error" ng-if="movieForm.title.$dirty">
+            <p ng-message="required" class="error">First Name is required</p>
+            <p ng-message="minlength" class="error">First Name has to be at least 4 chars</p>
+        </div>
+    </div> </td></tr>
+    <tr><td><div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" class="form-control" id="year" name="year" placeholder="Year" ng-model="addMovieVm.newMovie.year" required minlength="4">
+        <div ng-messages="movieForm.year.$error" ng-if="movieForm.year.$dirty">
+            <p ng-message="required" class="error">Last Name is required</p>
+            <p ng-message="minlength" class="error">Last Name has to be at least 4 chars</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="rated">Rated</label>
+        <input type="rated" class="form-control" id="rated" name="rated" placeholder="Rated" ng-model="addMovieVm.newMovie.rated" required>
+        <div ng-messages="movieForm.rated.$error" ng-if="movieForm.rated.$dirty">
+            <p ng-message="required" class="error">Email is required</p>
+            <p ng-message="rated" class="error">Email is invalid</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="released">Released</label>
+        <input type="datetime" class="form-control" id="released" name="released" placeholder="yyyy-mm-dd" ng-model="addMovieVm.newMovie.released" required>
+        <div ng-messages="movieForm.released.$error" ng-if="movieForm.released.$dirty">
+            <p ng-message="required" class="error">City is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="runtime">Runtime</label>
+        <input type="text" class="form-control" id="runtime" name="runtime" placeholder="Runtime" ng-model="addMovieVm.newMovie.runtime" required>
+        <div ng-messages="movieForm.runtime.$error" ng-if="movieForm.runtime.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre" ng-model="addMovieVm.newMovie.genre" required>
+        <div ng-messages="movieForm.runtime.$error" ng-if="movieForm.runtime.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="director">Director</label>
+        <input type="text" class="form-control" id="director" name="director" placeholder="Director" ng-model="addMovieVm.newMovie.director" required>
+        <div ng-messages="movieForm.director.$error" ng-if="movieForm.director.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="writer">Writer</label>
+        <input type="text" class="form-control" id="writer" name="writer" placeholder="Writer" ng-model="addMovieVm.newMovie.writer" required>
+        <div ng-messages="movieForm.writer.$error" ng-if="movieForm.writer.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="actors">Actors</label>
+        <input type="text" class="form-control" id="actors" name="actors" placeholder="Actors" ng-model="addMovieVm.newMovie.actors" required>
+        <div ng-messages="movieForm.actors.$error" ng-if="movieForm.actors.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="plot">Plot</label>
+        <textarea class="form-control" id="plot" name="plot" placeholder="Plot" ng-model="addMovieVm.newMovie.plot" required></textarea>
+        <div ng-messages="movieForm.plot.$error" ng-if="movieForm.plot.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="language">Language</label>
+        <input type="text" class="form-control" id="language" name="language" placeholder="Language" ng-model="addMovieVm.newMovie.language" required>
+        <div ng-messages="movieForm.language.$error" ng-if="movieForm.language.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" id="country" name="country" placeholder="Country" ng-model="addMovieVm.newMovie.country" required>
+        <div ng-messages="movieForm.country.$error" ng-if="movieForm.country.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="awards">Awards</label>
+        <input type="text" class="form-control" id="awards" name="awards" placeholder="Awards" ng-model="addMovieVm.newMovie.awards" required>
+        <div ng-messages="movieForm.runtime.$error" ng-if="movieForm.runtime.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="poster">Poster</label>
+        <input type="url" class="form-control" id="poster" name="poster" placeholder="Image Url" ng-model="addMovieVm.newMovie.poster" required>
+        <div ng-messages="movieForm.poster.$error" ng-if="movieForm.poster.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="imdbRating">imdbRating</label>
+        <input type="text" class="form-control" id="imdbRating" name="imdbRating" placeholder="IMDB Rating" ng-model="addMovieVm.newMovie.imdbRating" required>
+        <div ng-messages="movieForm.imdbRating.$error" ng-if="movieForm.imdbRating.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr><td><div class="form-group">
+        <label for="imdbVotes">imdbVotes</label>
+        <input type="text" class="form-control" id="imdbVotes" name="imdbVotes" placeholder="IMDB Votes" ng-model="addMovieVm.newMovie.imdbVotes" required>
+        <div ng-messages="movieForm.imdbVotes.$error" ng-if="movieForm.imdbVotes.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="imdbID">imdbID</label>
+        <input type="text" class="form-control" id="imdbID" name="imdbID" placeholder="IMDB ID" ng-model="addMovieVm.newMovie.imdbID" required>
+        <div ng-messages="movieForm.runtime.$error" ng-if="movieForm.runtime.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr> <td><div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" class="form-control" id="type" name="type" placeholder="Movie/TV Series" ng-model="addMovieVm.newMovie.type" required>
+        <div ng-messages="movieForm.type.$error" ng-if="movieForm.type.$dirty">
+            <p ng-message="required" class="error">Company is required</p>
+        </div>
+    </div></td></tr>
+    <tr><td>
+        <button type="submit" class="btn btn-primary" ng-disabled="movieForm.$invalid">Submit</button>
+    </td></tr>
+</form>
+    </tbody>
+    </table>
+    </div>

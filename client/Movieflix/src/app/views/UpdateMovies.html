@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movieflix-Update Movies</title> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/Admin.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-left">
+    <a href="../../Admin.html">
+        <img src="../../images/Logo.png"></a>
+    </a>
+</div>
+<div class="container">
+    <h1>Movie Details</h1>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Upload a Poster</h6>
+
+                <input type="file" class="form-control">
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <h3>Edit info</h3>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Title:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="Avengers: Age of Ultron">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Year:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="2015">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Rated:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="PG-13">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Released:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="01 May 2015">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Runtime:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="141min">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Genre:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="Action, Adventure, Sci-Fi">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Director:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="Joss Whedon">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Writer:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="Joss Whedon, Stan Lee (Marvel comics), Jack Kirby (Marvel comics)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="button" class="btn btn-primary" value="Save Changes">
+                        <span></span>
+                        <input type="reset" class="btn btn-default" value="Cancel">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+</body>
+</html>
