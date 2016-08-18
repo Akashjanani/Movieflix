@@ -1,12 +1,54 @@
-<ul class="nav navbar-nav navbar-right">
-<p>Sort By:
-<a href="#/imdbRatings">imdbRatings</a>
-<a href="#/imdbVotes">imdbVotes</a>
-<a href="#/year">Year</a></p>
-</ul>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/user-home">
+                <img src="images/Logo.png"></a>
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#/top-movies">Top Rated Movies</a></li>
+            <li><a href="#/top-series">Top Rated TV Series</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" id="nav" data-toggle="dropdown" >Categories
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu" ng-model="select" ng-change="showSelectValue(select)" >
+                    <li><a href="#/genre">Action</a></li>
+                    <li><a href="#/genre">Adventure</a></li>
+                    <li><a href="#/genre">Drama</a></li>
+                    <li><a href="#/genre">Comedy</a></li>
+                    <li><a href="#/genre">Thriller</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="form-group has-feedback">
+                    <form class="form-inline pull-xs-right">
+                        <input class="form-control" type="text" placeholder="Titles, genres" ng-model="userHomeVm.searchText" />
+                        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                    </form>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" >User
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu" ng-model="select" ng-change="showSelectValue(select)" >
+                    <li><a href="#/userAccount"><span class="glyphicon glyphicon-wrench"></span>My Account</a></li>
+                    <li><a href="#/login"><span class="glyphicon glyphicon-log-out"></span> Sign out of Netflix</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
 <div class="row">
     <h2 class="rowHeader">Popular now</h2>
-    <div ng-repeat="movies in userHomeVm.movies">
+    <div ng-repeat="movies in userHomeVm.movies | filter: userHomeVm.searchText ">
     <div class="col-xs-6 col-md-3">
         <div class="grow">
             <div class="hovereffect">

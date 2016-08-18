@@ -20,7 +20,7 @@
         self.sortimdbRatings = sortimdbRatings;
         self.sortimdbVotes = sortimdbVotes;
         self.sortYear = sortYear;
-        self.editUser = editUser;
+        self.userAccount = userAccount;
 
 
         function getMovies() {
@@ -66,8 +66,8 @@
                 .then(successFn, errorFn);
         }
 
-        function editUser(id) {
-            return $http.get('http://localhost:8080/Movieflix/api/users' +id)
+        function userAccount(id) {
+            return $http.get('http://localhost:8080/Movieflix/api/users/' +id)
                 .then(successFn, errorFn);
         }
         function successFn(response) {

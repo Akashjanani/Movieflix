@@ -1,7 +1,20 @@
-<div class="form-group has-feedback">
-    <form class="form-inline pull-xs-right">
-        <input class="form-control" type="text" placeholder="Search"  ng-model="userListVm.searchText"/>
-    </form>
+<div class="navbar navbar-inverse navbar-fixed-left">
+    <a href="#user-list" role="tab" data-toggle="tab">
+        <img src="images/Logo.png"></a>
+    </a>
+    <div class="form-group has-feedback">
+        <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search"  ng-model="movieListVm.searchText"/>
+        </form>
+    </div>
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li role="presentation"><a href="#/user-list" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>User List </a></li>
+        <li role="presentation"><a href="#/movie-list" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Movie/TV Series List </a></li>
+        <li role="presentation"><a href="#add-movie" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Add Movie </a></li>
+        <li role="presentation"><a href="#account" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>My Account</a></li>
+        <li role="presentation"><a href="#login" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Sign out</a></li>
+    </ul>
+
 </div>
 <div class="account-wall">
     <h1>Movie List</h1>
@@ -13,17 +26,19 @@
         <th ng-click="movieListVm.sorter.sortBy='year'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Year</th>
         <th ng-click="movieListVm.sorter.sortBy='genre'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Genre</th>
         <th ng-click="movieListVm.sorter.sortBy='director'; movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;">Director</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="movies in movieListVm.movies">
+    <tr ng-repeat="movies in movieListVm.movies | filter:movieListVm.searchText | orderBy:movieListVm.sorter.sortBy: movieListVm.sorter.sortOrder ">
         <td>
-            <a ng-href="#/movie-detail/{{movies.id}}"><img class= "poster" ng-src="{{movies.poster}}"/></a>
+            <a ng-href="#/movie-detail/{{movies.id}}"><img class="poster" ng-src="{{movies.poster}}"/></a>
         </td>
     <td>{{movies.title}}</td>
     <td>{{movies.year}}</td>
     <td>{{movies.genre}}</td>
     <td>{{movies.director}}</td>
+    <td><i ng-click="movieListVm.deleteMovie(movies.id)" class="glyphicon glyphicon-remove "></i></td>
     </tr>
     </tbody>
 </table>

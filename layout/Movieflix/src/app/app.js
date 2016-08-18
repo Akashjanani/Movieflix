@@ -89,7 +89,7 @@
                 controller: 'SorterController',
                 controllerAs: 'vm'
             })
-            .when('/edituser', {
+            .when('/userAccount', {
                 templateUrl: 'app/views/user-account.tmpl.html',
                 controller: 'UserAccountController',
                 controllerAs: 'vm'

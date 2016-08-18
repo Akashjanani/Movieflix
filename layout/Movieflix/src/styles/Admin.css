@@ -1,9 +1,6 @@
 .form-control{
     margin-top: 7px;
 }
-.form-group{
-    width:40%;
-}
 .btn{
     margin-top: 7px;
 }
@@ -53,7 +50,7 @@ body {
     margin-left: 140px;
 }
 .nav{
-    margin-top: 100px;
+    margin-top: 15px;
 }
 a{
     color: lightgrey;
@@ -71,4 +68,22 @@ img{
 .poster{
     width: 60px;
     height: 60px;
+}
+.form-inline{
+    margin-top: 0px;
+    margin-bottom: 40px;
+    margin-left:15px;
+}
+#table {
+    counter-reset: rowNumber;
+}
+
+#table tr:not(:first-child) {
+    counter-increment: rowNumber;
+}
+
+#table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
 }

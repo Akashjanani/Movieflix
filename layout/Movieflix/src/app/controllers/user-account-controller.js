@@ -14,7 +14,7 @@
 
         function init() {
             userHomeService
-                .editUser("a6e9d552-a953-4248-91ce-def986e13fc7")
+                .userAccount("a6e9d552-a953-4248-91ce-def986e13fc7")
                 .then(function(data) {
                     vm.user = data;
                 }, function(error) {

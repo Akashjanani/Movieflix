@@ -1,3 +1,21 @@
+<div class="navbar navbar-inverse navbar-fixed-left">
+    <a href="#user-list" role="tab" data-toggle="tab">
+        <img src="images/Logo.png"></a>
+    </a>
+    <div class="form-group has-feedback">
+        <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search"  ng-model="userListVm.searchText"/>
+        </form>
+    </div>
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li role="presentation"><a href="#/user-list" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>User List </a></li>
+        <li role="presentation"><a href="#/movie-list" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Movie/TV Series List </a></li>
+        <li role="presentation"><a href="#add-movie" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Add Movie </a></li>
+        <li role="presentation"><a href="#account" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>My Account</a></li>
+        <li role="presentation"><a href="#login" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-chevron-right"></span>Sign out</a></li>
+    </ul>
+
+</div>
 <div class="account-wall">
 <table id="table-striped" class="table table-striped">
 <thead>

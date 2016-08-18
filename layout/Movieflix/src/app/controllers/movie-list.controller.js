@@ -12,22 +12,41 @@
 
         init();
 
-         function init(){
-        console.log('in MoviesListController');
+        function init() {
+            console.log('in MoviesListController');
 
-        movieListVm.sorter = {
-            sortBy: 'title',
-            sortOrder: false
-        };
+            movieListVm.sorter = {
+                sortBy: 'title',
+                sortOrder: false
+            };
 
-        adminService
-            .getMovies()
-            .then(function(data) {
-                movieListVm.movies = data;
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-    }
+            adminService
+                .getMovies()
+                .then(function (data) {
+                    movieListVm.movies = data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+            movieListVm.deleteMovie = function (id) {
+                _.remove(movieListVm.movies, function(u){
+                    if(u.id === id)
+                    {
+                    adminService
+                        .deleteMovie(id)
+                        .then(function () {
+                            adminService
+                            .getMovies()
+                                .then(function (data) {
+                                    movieListVm.movies = data;
+                                })
+                        })
+                        }
+                })
+            }
+
+        }
+
     }
 })();

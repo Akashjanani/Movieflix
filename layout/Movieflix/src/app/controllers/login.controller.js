@@ -15,12 +15,12 @@
             loginVm.dataLoading = true;
             userService
                 .login(loginVm.user)
-                .then(function (response) {
-                    if(response==true){
-                        console.log(response);
+                .then(function (data) {
+                    loginVm.user = data;
+                    if(loginVm.user.role=="admin"){
                         $location.path('/user-list')
                         }
-                        else{
+                    else if(loginVm.user.role=="user") {
                             $location.path('/user-home')
                     }
                 }, function(error) {
